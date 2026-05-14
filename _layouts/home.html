@@ -29,36 +29,44 @@ layout: default
 
         {{ content }}
 
-        <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
+        <style>
+          .home-section { margin-bottom: 2.5rem; }
+          .home-section h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+          .home-section p  { color: #555; margin-bottom: 1rem; }
+          .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem; }
+          @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+          .port-card { border: 1px solid #ddd; border-radius: 6px; padding: 1.4rem 1.6rem; text-decoration: none; color: #333; display: block; transition: box-shadow .2s, border-color .2s; }
+          .port-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10); border-color: #0085a1; color: #333; text-decoration: none; }
+          .port-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; color: #0085a1; }
+          .port-card p  { font-size: 0.88rem; color: #666; margin: 0; }
+        </style>
 
-        <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
-          </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
-          </p>
-        </article>
+        <!-- Intro -->
+        <div class="home-section">
+          <h2>Welcome</h2>
+          <p>I am a researcher at <strong>Hankuk University of Foreign Studies</strong>, Division of Computer Engineering. My research focuses on efficient LLM inference through neural network quantization.</p>
+        </div>
 
         <hr>
 
-        {% endfor %}
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/seminars" | relative_url }}">View All Seminars &rarr;</a>
+        <!-- Quick Nav Cards -->
+        <div class="card-grid">
+          <a class="port-card" href="{{"/about" | relative_url }}">
+            <h3>About Me</h3>
+            <p>Education, research interests, and skills</p>
+          </a>
+          <a class="port-card" href="{{"/seminars" | relative_url }}">
+            <h3>Seminars</h3>
+            <p>Weekly research seminar presentations</p>
+          </a>
+          <a class="port-card" href="{{"/publications" | relative_url }}">
+            <h3>Publications</h3>
+            <p>Conference papers and research outputs</p>
+          </a>
+          <a class="port-card" href="{{"/contact" | relative_url }}">
+            <h3>Contact</h3>
+            <p>Get in touch via email or GitHub</p>
+          </a>
         </div>
 
       </div>
