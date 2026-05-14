@@ -1,12 +1,100 @@
 ---
 layout: page
 title: About Me
-description: This is what I do.
+description: Seong Woo Choi
 background: '/img/bg-about.jpg'
 ---
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quisquam ut perspiciatis, repudiandae nulla animi iste vel, praesentium repellendus molestias aliquid consequatur, earum rem qui error voluptates eius enim consequuntur!</p>
+<style>
+  .cv-section { margin-bottom: 2.5rem; }
+  .cv-section h3 { font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #333; padding-bottom: 0.4rem; margin-bottom: 1.2rem; }
+  .cv-row { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+  .cv-date { min-width: 140px; color: #777; font-size: 0.9rem; padding-top: 0.1rem; }
+  .cv-body p { margin-bottom: 0.3rem; }
+  .cv-body .role { font-weight: 700; }
+  .cv-body .sub  { color: #555; font-size: 0.92rem; }
+  .cv-body .desc { color: #666; font-size: 0.88rem; margin-top: 0.2rem; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+  .tag { background: #f0f4f8; border: 1px solid #d0dce8; border-radius: 4px; padding: 0.25rem 0.75rem; font-size: 0.85rem; color: #334; }
+  .contact-links a { margin-right: 1.2rem; color: #0085a1; text-decoration: none; }
+  .contact-links a:hover { text-decoration: underline; }
+</style>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex alias, earum consectetur quia natus ducimus voluptate explicabo, hic porro reprehenderit, quasi? Tenetur ipsum distinctio laboriosam perspiciatis officiis dolore, architecto id.</p>
+<!-- Contact -->
+<div class="cv-section">
+  <div class="contact-links">
+    <a href="mailto:bw4363@naver.com">bw4363@naver.com</a>
+    <a href="mailto:bw4363@hufs.ac.kr">bw4363@hufs.ac.kr</a>
+    <a href="https://github.com/chltjddn43" target="_blank">GitHub</a>
+    <a href="https://velog.io/@chltjddn43/series" target="_blank">Blog</a>
+  </div>
+</div>
 
-<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam inventore aspernatur repellendus incidunt adipisci modi voluptates recusandae iste eligendi, repudiandae corporis quod aut, optio! Explicabo quaerat unde voluptatem! Itaque, eum!</p>
+<!-- Education -->
+<div class="cv-section">
+  <h3>Education</h3>
+  <div class="cv-row">
+    <div class="cv-date">Mar. 2021 – Present</div>
+    <div class="cv-body">
+      <p class="role">Hankuk University of Foreign Studies</p>
+      <p class="sub">Division of Computer Engineering &nbsp;·&nbsp; Yongin, Korea</p>
+      <p class="sub">Bachelor Student &nbsp;·&nbsp; GPA: 3.85 / 4.5</p>
+      <p class="desc">Advisor: Prof. Park Cheon-jun</p>
+    </div>
+  </div>
+</div>
+
+<!-- Research Interests -->
+<div class="cv-section">
+  <h3>Research Interests</h3>
+  <div class="tag-list">
+    <span class="tag">AI Accelerator</span>
+    <span class="tag">Quantization</span>
+    <span class="tag">Hardware-Software Co-design</span>
+    <span class="tag">Computer / NPU Architecture</span>
+  </div>
+</div>
+
+<!-- Research Experience -->
+<div class="cv-section">
+  <h3>Research Experience</h3>
+  <div class="cv-row">
+    <div class="cv-date">Dec. 2025 – Present</div>
+    <div class="cv-body">
+      <p class="role">Undergraduate Researcher — SHANNon Lab</p>
+      <p class="sub">Hankuk University of Foreign Studies &nbsp;·&nbsp; Advisor: Prof. Park Cheon-jun</p>
+      <p class="desc">Analyzed quantization algorithms for efficient LLM inference</p>
+    </div>
+  </div>
+  <div class="cv-row">
+    <div class="cv-date">Jun. 2025 – Dec. 2025</div>
+    <div class="cv-body">
+      <p class="role">Undergraduate Researcher — AIM Lab</p>
+      <p class="sub">Hankuk University of Foreign Studies &nbsp;·&nbsp; Advisor: Prof. Ji Soo-yeon</p>
+      <p class="desc">Visualized medical AI data correlation (χ-dia vs. Myelin Maps) and analyzed memory bottlenecks in large language models</p>
+    </div>
+  </div>
+</div>
+
+<!-- Skills -->
+<div class="cv-section">
+  <h3>Skills &amp; Techniques</h3>
+  <div class="tag-list">
+    <span class="tag">Python</span>
+    <span class="tag">C</span>
+    <span class="tag">C++</span>
+    <span class="tag">Java (basic)</span>
+  </div>
+</div>
+
+<!-- Others -->
+<div class="cv-section">
+  <h3>Others</h3>
+  <div class="cv-row">
+    <div class="cv-date"></div>
+    <div class="cv-body">
+      <p class="sub">Member of PnP (Passion &amp; Pioneer), Computer Engineering Student Society, HUFS — AI study blog: <a href="https://velog.io/@chltjddn43/series" target="_blank">velog.io/@chltjddn43</a></p>
+      <p class="sub">Military Service: Completed as Sergeant, Republic of Korea Army</p>
+    </div>
+  </div>
+</div>
