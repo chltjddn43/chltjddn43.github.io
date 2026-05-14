@@ -13,6 +13,9 @@ background: '/img/bg-post.jpg'
   .file-table a { text-decoration: none; color: #0085a1; font-weight: 500; }
   .file-table a:hover { text-decoration: underline; }
   .venue { font-size: 0.85rem; color: #777; }
+  .btn-link { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.82rem; text-decoration: none; }
+  .btn-pdf  { background: #0085a1; color: #fff !important; }
+  .btn-pdf:hover { background: #006070; }
 </style>
 
 <table class="file-table">
@@ -21,15 +24,57 @@ background: '/img/bg-post.jpg'
       <th>#</th>
       <th>Title</th>
       <th>Venue</th>
+      <th>PDF</th>
     </tr>
   </thead>
   <tbody>
-    <!-- 논문을 아래 형식으로 추가하세요
     <tr>
       <td>1</td>
-      <td><a href="논문링크" target="_blank">논문 제목</a></td>
-      <td class="venue">학회명, 연도</td>
+      <td>DFX: A Multi-FPGA Happy Meal for Large Language Model Inference</td>
+      <td class="venue">MICRO 2022</td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/dfx.pdf' | relative_url }}" target="_blank">PDF</a></td>
     </tr>
-    -->
+    <tr>
+      <td>2</td>
+      <td>In-Datacenter Performance Analysis of a Tensor Processing Unit (TPU v1)</td>
+      <td class="venue">ISCA 2017</td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/TPU_v1.pdf' | relative_url }}" target="_blank">PDF</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TPU v4: An Optically Reconfigurable Supercomputer for Machine Learning with Hardware Support for Embeddings</td>
+      <td class="venue">ISCA 2023</td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/TPU_v4.pdf' | relative_url }}" target="_blank">PDF</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>System Virtualization for Neural Processing Units</td>
+      <td class="venue"></td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/System Virtualization for Neural Processing Units.pdf' | relative_url }}" target="_blank">PDF</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>BBS: Bi-directional Bit-level Sparsity for Deep Learning Acceleration</td>
+      <td class="venue">MICRO 2022</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Sibia: Signed Bit-slice Architecture for Dense DNN Inference and Sparse DNN Training Acceleration</td>
+      <td class="venue">HPCA 2023</td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/1_Sibia_HPCA2023__2026_0318.pdf' | relative_url }}" target="_blank">PDF</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>BADA: Bit-slice Arithmetic for DNN Acceleration</td>
+      <td class="venue">HPCA 2025</td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/2_BADA_Bit-slice_HPCA2025.pdf' | relative_url }}" target="_blank">PDF</a></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>LuTein: Look-up Table Based Quantized Inference for Neural Networks</td>
+      <td class="venue">HPCA 2024</td>
+      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/3_Lutein_HPCA2024.pdf' | relative_url }}" target="_blank">PDF</a></td>
+    </tr>
   </tbody>
 </table>
