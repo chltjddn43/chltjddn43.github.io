@@ -1,37 +1,219 @@
-// Deep Blue Theme Override
-$teal: #1a3a6b;
+// ── Deep Blue Theme ─────────────────────────────────────
+$teal:    #1a3a6b;
 $primary: #1a3a6b;
 
-// Import Core Clean Blog SCSS
+// ── Base Import ──────────────────────────────────────────
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
 
-// ── Global accent overrides ──────────────────────────────
-a { color: #1a3a6b; }
+// ═══════════════════════════════════════════════════════
+//  GLOBAL
+// ═══════════════════════════════════════════════════════
+body {
+  font-size: 17px;
+  color: #2c2c2c;
+  background: #f5f7fa;
+}
+
+a { color: #1a3a6b; transition: color .2s; }
 a:hover { color: #0d2348; }
 
+::selection { background: #1a3a6b; color: #fff; }
+
+// ═══════════════════════════════════════════════════════
+//  NAVBAR
+// ═══════════════════════════════════════════════════════
+#mainNav {
+  border-bottom: none !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+  .navbar-brand {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #1a3a6b !important;
+  }
+
+  .nav-link {
+    color: #1a3a6b !important;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: color .2s;
+
+    &:hover { color: #0d2348 !important; }
+  }
+
+  @media (min-width: 992px) {
+    background: rgba(255,255,255,0.95) !important;
+    backdrop-filter: blur(8px);
+
+    .navbar-brand { color: #1a3a6b !important; }
+    .nav-link { color: #1a3a6b !important; }
+
+    &.is-fixed {
+      background: rgba(255,255,255,0.97) !important;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+
+      .navbar-brand,
+      .nav-link { color: #1a3a6b !important; }
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  MASTHEAD (Hero header)
+// ═══════════════════════════════════════════════════════
+header.masthead {
+  margin-bottom: 0;
+
+  .overlay {
+    background: linear-gradient(135deg, rgba(10,25,60,0.72) 0%, rgba(26,58,107,0.55) 100%);
+    opacity: 1 !important;
+  }
+
+  .page-heading, .site-heading {
+    padding: 140px 0 100px;
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .subheading {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.88;
+      letter-spacing: 0.3px;
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  CONTENT WRAPPER
+// ═══════════════════════════════════════════════════════
+.container > .row > [class*="col-"] {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  padding: 2.5rem 2.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+// ═══════════════════════════════════════════════════════
+//  HEADINGS inside content
+// ═══════════════════════════════════════════════════════
+h2, h3 {
+  color: #1a3a6b;
+}
+
+// ═══════════════════════════════════════════════════════
+//  BUTTONS
+// ═══════════════════════════════════════════════════════
 .btn-primary {
-  background-color: #1a3a6b;
-  border-color: #1a3a6b;
-  &:hover { background-color: #0d2348; border-color: #0d2348; }
+  background: #1a3a6b;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1.2rem;
+  transition: background .2s, box-shadow .2s;
+  box-shadow: 0 2px 8px rgba(26,58,107,0.18);
+
+  &:hover {
+    background: #0d2348;
+    box-shadow: 0 4px 12px rgba(26,58,107,0.28);
+  }
 }
 
-// Navbar brand & links
-#mainNav .navbar-brand,
-#mainNav .nav-link { color: #1a3a6b !important; }
-#mainNav { border-bottom-color: #1a3a6b; }
+// Sitewide PDF / PPTX buttons
+.btn-pdf {
+  background: #1a3a6b !important;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(26,58,107,0.2);
+  transition: background .2s, box-shadow .2s;
 
-// Masthead overlay tint
-.masthead .overlay {
-  background-color: rgba(10, 25, 55, 0.6);
+  &:hover {
+    background: #0d2348 !important;
+    box-shadow: 0 3px 8px rgba(26,58,107,0.3);
+  }
 }
 
-// Home portfolio cards
-.port-card h3 { color: #1a3a6b !important; }
-.port-card:hover { border-color: #1a3a6b !important; }
+.btn-pptx {
+  border-radius: 5px;
+  transition: background .2s;
+}
 
-// PDF buttons sitewide
-.btn-pdf { background: #1a3a6b !important; }
-.btn-pdf:hover { background: #0d2348 !important; }
+// ═══════════════════════════════════════════════════════
+//  HOME CARDS
+// ═══════════════════════════════════════════════════════
+.port-card {
+  border: 1px solid #e0e8f4 !important;
+  border-radius: 8px !important;
+  background: #fff;
+  transition: box-shadow .25s, transform .2s, border-color .2s !important;
 
-// CV about page links
+  h3 { color: #1a3a6b !important; font-size: 1rem; }
+  p  { color: #666; font-size: 0.87rem; }
+
+  &:hover {
+    border-color: #1a3a6b !important;
+    box-shadow: 0 6px 24px rgba(26,58,107,0.12) !important;
+    transform: translateY(-2px);
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  FOOTER
+// ═══════════════════════════════════════════════════════
+footer {
+  background: #f0f3f8;
+  border-top: 1px solid #dce4f0;
+  padding: 30px 0 40px;
+
+  .copyright {
+    font-size: 13px;
+    color: #888;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  ABOUT PAGE — CV SECTIONS
+// ═══════════════════════════════════════════════════════
+.cv-section h3 {
+  color: #1a3a6b;
+  border-bottom-color: #1a3a6b;
+}
+
 .contact-links a { color: #1a3a6b !important; }
+
+// ═══════════════════════════════════════════════════════
+//  SEMINAR GROUP HEADINGS
+// ═══════════════════════════════════════════════════════
+.group-heading {
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+// ═══════════════════════════════════════════════════════
+//  REVIEW PAPER CARDS
+// ═══════════════════════════════════════════════════════
+.paper-card {
+  border: 1px solid #e0e8f4 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 6px rgba(26,58,107,0.07);
+  transition: box-shadow .2s;
+
+  &:hover { box-shadow: 0 4px 16px rgba(26,58,107,0.13); }
+}
+
+.paper-header { background: #fff; }
+.notes-body   { background: #f4f7fc; border-top: 1px solid #dce4f0; }
+.btn-notes {
+  border-color: #1a3a6b !important;
+  color: #1a3a6b !important;
+  border-radius: 5px;
+  transition: background .2s;
+
+  &:hover { background: #eef2fa !important; }
+}
