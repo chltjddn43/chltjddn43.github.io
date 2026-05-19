@@ -6,75 +6,183 @@ background: '/img/bg-post.jpg'
 ---
 
 <style>
-  .file-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
-  .file-table th { border-bottom: 2px solid #333; padding: 0.6rem 1rem; text-align: left; font-size: 0.9rem; }
-  .file-table td { border-bottom: 1px solid #ddd; padding: 0.75rem 1rem; vertical-align: middle; }
-  .file-table tr:hover td { background: #f8f8f8; }
-  .file-table a { text-decoration: none; color: #0085a1; font-weight: 500; }
-  .file-table a:hover { text-decoration: underline; }
-  .venue { font-size: 0.85rem; color: #777; }
-  .btn-link { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.82rem; text-decoration: none; }
-  .btn-pdf  { background: #0085a1; color: #fff !important; }
-  .btn-pdf:hover { background: #006070; }
+  .paper-card { border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1rem; overflow: hidden; }
+  .paper-header { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; background: #fff; }
+  .paper-num { min-width: 28px; font-size: 0.85rem; font-weight: 700; color: #aaa; }
+  .paper-info { flex: 1; }
+  .paper-title { font-size: 0.95rem; font-weight: 600; color: #222; margin-bottom: 0.15rem; line-height: 1.4; }
+  .paper-venue { font-size: 0.8rem; color: #888; }
+  .paper-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .btn-pdf {
+    display: inline-block; padding: 0.28rem 0.75rem; border-radius: 4px;
+    font-size: 0.8rem; text-decoration: none;
+    background: #1a3a6b; color: #fff !important;
+  }
+  .btn-pdf:hover { background: #0d2348; text-decoration: none; }
+  .btn-notes {
+    display: inline-block; padding: 0.28rem 0.75rem; border-radius: 4px;
+    font-size: 0.8rem; text-decoration: none; cursor: pointer;
+    border: 1px solid #1a3a6b; color: #1a3a6b; background: #fff;
+  }
+  .btn-notes:hover { background: #f0f4fa; }
+  .notes-body { display: none; padding: 0.9rem 1.2rem; background: #f7f9fc; border-top: 1px solid #e0e8f0; }
+  .notes-body.open { display: block; }
+  .notes-body p {
+    font-size: 0.92rem; color: #444; line-height: 1.7; margin: 0;
+    white-space: pre-wrap;
+  }
+  .notes-empty { font-size: 0.88rem; color: #bbb; font-style: italic; }
 </style>
 
-<table class="file-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Title</th>
-      <th>Venue</th>
-      <th>PDF</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>DFX: A Low-latency Multi-FPGA Appliance for Accelerating Transformer-based Text Generation</td>
-      <td class="venue">MICRO 2022</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/dfx.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>In-Datacenter Performance Analysis of a Tensor Processing Unit</td>
-      <td class="venue">ISCA 2017</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/TPU_v1.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>TPUv4: An Optically Reconfigurable Supercomputer for Machine Learning with Hardware Support for Embeddings</td>
-      <td class="venue">ISCA 2023</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/TPU_v4.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>System Virtualization for Neural Processing Units</td>
-      <td class="venue"></td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/System Virtualization for Neural Processing Units.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>BBS: Bi-directional Bit-level Sparsity for Deep Learning Acceleration</td>
-      <td class="venue">MICRO 2022</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/BBS.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Sibia: Signed Bit-slice Architecture for Dense DNN Acceleration with Slice-level Sparsity Exploitation</td>
-      <td class="venue">HPCA 2023</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/1_Sibia_HPCA2023__2026_0318.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Bit-slice Architecture for DNN Acceleration with Slice-level Sparsity Enhancement and Exploitation</td>
-      <td class="venue">HPCA 2025</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/2_BADA_Bit-slice_HPCA2025.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>LUTein: Dense-Sparse Bit-slice Architecture with Radix-4 LUT-based Slice-Tensor Processing Units</td>
-      <td class="venue">HPCA 2024</td>
-      <td><a class="btn-link btn-pdf" href="{{ '/assets/files/papers/3_Lutein_HPCA2024.pdf' | relative_url }}" target="_blank">PDF</a></td>
-    </tr>
-  </tbody>
-</table>
+<script>
+function toggleNotes(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('open');
+  var btn = el.previousElementSibling.querySelector('.btn-notes');
+  btn.textContent = el.classList.contains('open') ? '▲ Notes' : '▼ Notes';
+}
+</script>
+
+<!-- 1 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">1</div>
+    <div class="paper-info">
+      <div class="paper-title">DFX: A Low-latency Multi-FPGA Appliance for Accelerating Transformer-based Text Generation</div>
+      <div class="paper-venue">MICRO 2022</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/dfx.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-1')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-1">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">2</div>
+    <div class="paper-info">
+      <div class="paper-title">In-Datacenter Performance Analysis of a Tensor Processing Unit</div>
+      <div class="paper-venue">ISCA 2017</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/TPU_v1.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-2')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-2">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">3</div>
+    <div class="paper-info">
+      <div class="paper-title">TPUv4: An Optically Reconfigurable Supercomputer for Machine Learning with Hardware Support for Embeddings</div>
+      <div class="paper-venue">ISCA 2023</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/TPU_v4.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-3')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-3">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">4</div>
+    <div class="paper-info">
+      <div class="paper-title">System Virtualization for Neural Processing Units</div>
+      <div class="paper-venue"></div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/System Virtualization for Neural Processing Units.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-4')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-4">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">5</div>
+    <div class="paper-info">
+      <div class="paper-title">BBS: Bi-directional Bit-level Sparsity for Deep Learning Acceleration</div>
+      <div class="paper-venue">MICRO 2022</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/BBS.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-5')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-5">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">6</div>
+    <div class="paper-info">
+      <div class="paper-title">Sibia: Signed Bit-slice Architecture for Dense DNN Acceleration with Slice-level Sparsity Exploitation</div>
+      <div class="paper-venue">HPCA 2023</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/1_Sibia_HPCA2023__2026_0318.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-6')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-6">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">7</div>
+    <div class="paper-info">
+      <div class="paper-title">Bit-slice Architecture for DNN Acceleration with Slice-level Sparsity Enhancement and Exploitation</div>
+      <div class="paper-venue">HPCA 2025</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/2_BADA_Bit-slice_HPCA2025.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-7')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-7">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="paper-card">
+  <div class="paper-header">
+    <div class="paper-num">8</div>
+    <div class="paper-info">
+      <div class="paper-title">LUTein: Dense-Sparse Bit-slice Architecture with Radix-4 LUT-based Slice-Tensor Processing Units</div>
+      <div class="paper-venue">HPCA 2024</div>
+    </div>
+    <div class="paper-actions">
+      <a class="btn-pdf" href="{{ '/assets/files/papers/3_Lutein_HPCA2024.pdf' | relative_url }}" target="_blank">PDF</a>
+      <span class="btn-notes" onclick="toggleNotes('notes-8')">▼ Notes</span>
+    </div>
+  </div>
+  <div class="notes-body" id="notes-8">
+    <p class="notes-empty">아직 작성된 내용이 없습니다.</p>
+  </div>
+</div>
