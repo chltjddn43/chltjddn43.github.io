@@ -1,2 +1,37 @@
+// Deep Blue Theme Override
+$teal: #1a3a6b;
+$primary: #1a3a6b;
+
 // Import Core Clean Blog SCSS
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
+
+// ── Global accent overrides ──────────────────────────────
+a { color: #1a3a6b; }
+a:hover { color: #0d2348; }
+
+.btn-primary {
+  background-color: #1a3a6b;
+  border-color: #1a3a6b;
+  &:hover { background-color: #0d2348; border-color: #0d2348; }
+}
+
+// Navbar brand & links
+#mainNav .navbar-brand,
+#mainNav .nav-link { color: #1a3a6b !important; }
+#mainNav { border-bottom-color: #1a3a6b; }
+
+// Masthead overlay tint
+.masthead .overlay {
+  background-color: rgba(10, 25, 55, 0.6);
+}
+
+// Home portfolio cards
+.port-card h3 { color: #1a3a6b !important; }
+.port-card:hover { border-color: #1a3a6b !important; }
+
+// PDF buttons sitewide
+.btn-pdf { background: #1a3a6b !important; }
+.btn-pdf:hover { background: #0d2348 !important; }
+
+// CV about page links
+.contact-links a { color: #1a3a6b !important; }
